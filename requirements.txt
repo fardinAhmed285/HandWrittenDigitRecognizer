@@ -1,0 +1,8 @@
+streamlit
+torch
+torchvision
+pillow
+numpy
+opencv-python
+psycopg2-binary
+streamlit-drawable-canvas

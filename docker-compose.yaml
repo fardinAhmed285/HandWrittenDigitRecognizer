@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: DBMS123
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  streamlit_app:
+    build: .
+    container_name: streamlit_app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8501:8501"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: DBMS123
+      DB_NAME: postgres
+    volumes:
+      - .:/app
+
+volumes:
+  pgdata:
