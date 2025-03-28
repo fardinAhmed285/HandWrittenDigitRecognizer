@@ -40,6 +40,8 @@ def ensure_table_exists():
 ensure_table_exists()
 
 # Getting database connection details from environment variables
+
+DB_URL = os.getenv("DATABASE_URL")
 DB_HOST = os.getenv("DB_HOST", "db")
 DB_NAME = os.getenv("DB_NAME", "postgres")
 DB_USER = os.getenv("DB_USER", "postgres")
@@ -48,9 +50,7 @@ DB_PORT = os.getenv("DB_PORT", "5432")
 
 # Function to connect to PostgreSQL
 def connect_db():
-    return psycopg2.connect(
-        host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASS, port=DB_PORT
-    )
+    return psycopg2.connect(DB_URL)
 
 
 
