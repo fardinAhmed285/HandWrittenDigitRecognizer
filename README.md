@@ -1,6 +1,5 @@
 # Handwritten Digit Recognizer
 
-<<<<<<< HEAD
 A web-based handwritten digit recognition application built with **Python, PyTorch, and Streamlit**. Users can draw a digit from 0 to 9 on an interactive canvas and receive a prediction with its confidence score.
 
 The application also includes a feedback mechanism and PostgreSQL integration to store prediction records and display recent prediction history.
@@ -265,4 +264,3 @@ A Streamlit app that uses a CNN model to recognize handwritten digits (0-9). The
 ## Live Application
 
 You can try the app live at: (https://handwrittendigitrecognizer-production.up.railway.app/)
->>>>>>> 9aa27c185144d4e4b9dc311b584dab8a5fddf643
